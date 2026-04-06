@@ -1,43 +1,52 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
-\usepackage[a4paper,margin=1.35cm]{geometry}
+\usepackage[a4paper,margin=1.55cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage[hidelinks]{hyperref}
-\usepackage{enumitem}
 \usepackage[dvipsnames]{xcolor}
-\usepackage{parskip}
+\usepackage{enumitem}
 \usepackage{tabularx}
 \usepackage{array}
-\usepackage{multicol}
 \usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{ragged2e}
 
-\setlength{\parindent}{0pt}
 \pagenumbering{gobble}
-\definecolor{accent}{HTML}{0F4C81}
-\definecolor{subtle}{HTML}{555555}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.15em,topsep=0.15em}
-\setlength{\columnsep}{0.9cm}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.35em,itemsep=0.22em,topsep=0.25em}
 
-\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\vspace{0.2em}\titlerule]
-\titlespacing*{\section}{0pt}{0.6em}{0.35em}
+\definecolor{accent}{HTML}{163A5F}
+\definecolor{muted}{HTML}{666666}
+\definecolor{rulecolor}{HTML}{D9E2EC}
 
+\titleformat{\section}
+  {\Large\bfseries\color{accent}}
+  {}
+  {0pt}
+  {}
+  [\vspace{0.25em}{\color{rulecolor}\titlerule}]
+\titlespacing*{\section}{0pt}{1.05em}{0.55em}
+
+\newcommand{\cvname}[1]{{\fontsize{24}{28}\selectfont\bfseries\color{accent} #1}}
+\newcommand{\cvtag}[1]{{\large\color{muted} #1}}
+\newcommand{\cvmeta}[1]{{\small\color{muted} #1}}
 \newcommand{\entry}[4]{%
-\textbf{#1} \hfill {\small #2}\\
-{\small\textit{#3}} \hfill {\small\color{subtle} #4}\\[-0.25em]
+  \textbf{#1} \hfill {\small #2}\\
+  {\textit{#3}} \hfill {\small\color{muted} #4}\\[-0.15em]
 }
 
 \begin{document}
 
-{\huge\bfseries\color{accent} Jon\'a\v{s} Proch\'azka}\\[0.3em]
-{\small Pilsen, Czech Republic \textbar\ \href{mailto:jonasprochaz@gmail.com}{jonasprochaz@gmail.com} \textbar\ +420 777 079 627 \textbar\ \href{https://github.com/jonasproch}{github.com/jonasproch}}
+\cvname{Jon\'a\v{s} Proch\'azka}\\[0.15em]
+\cvtag{Cybernetics student \textbar\ Software developer \textbar\ Robotics and scientific computing}
 
-\vspace{0.5em}
-
-\begin{multicols}{2}
+\vspace{0.4em}
+\cvmeta{Pilsen, Czech Republic \textbar\ \href{mailto:jonasprochaz@gmail.com}{jonasprochaz@gmail.com} \textbar\ +420 777 079 627 \textbar\ \href{https://github.com/jonasproch}{github.com/jonasproch}}
 
 \section*{Profile}
+\justifying
 Third year Cybernetics student at the University of West Bohemia with a focus on automation, robotics, control, and software systems. Currently working on a bachelor's thesis on uncertainty propagation of objects in orbit and employed part time as a software developer. Interested in scientific computing, robotics, applied mathematics, and technically demanding software engineering roles in research oriented environments.
 
 \section*{Education}
@@ -46,27 +55,6 @@ Third year Cybernetics student at the University of West Bohemia with a focus on
   \item Relevant areas: automation, control engineering, robotics, embedded systems, programming, and applied mathematics.
   \item Bachelor's thesis: \textit{Representation of uncertainty in the position and velocity of an object in orbit}.
 \end{itemize}
-
-\section*{Technical Skills}
-\textbf{Programming}\\
-Python, C++, C\#, TypeScript, MATLAB, SQL
-
-\vspace{0.35em}
-\textbf{Frameworks \& Tools}\\
-React, .NET, Git, Linux, Simulink, Simscape, Rexygen
-
-\vspace{0.35em}
-\textbf{Domains}\\
-Robotics, Control Engineering, Embedded Systems, Mathematical Modeling, Scientific Computing
-
-\section*{Languages}
-\textbf{Czech} Native\\
-\textbf{English} C1
-
-\section*{Interests}
-Space technology, motorsport, running, hiking
-
-\columnbreak
 
 \section*{Experience}
 \entry{Software Developer}{May 2025 -- Present}{Apollo Data s.r.o.}{Pilsen, Czech Republic}
@@ -90,7 +78,7 @@ Space technology, motorsport, running, hiking
   \item Contributed to a sports club management platform in an international work environment.
 \end{itemize}
 
-\section*{Projects}
+\section*{Selected Projects}
 \entry{Bachelor's Thesis: Uncertainty Propagation of Objects in Orbit}{Sep 2025 -- Present}{Research project}{University of West Bohemia}
 \begin{itemize}
   \item Compare approaches for propagating uncertainty in orbital position and velocity across different coordinate systems.
@@ -112,6 +100,20 @@ Space technology, motorsport, running, hiking
   \item Applied embedded and robotics principles in a practical hardware software system.
 \end{itemize}
 
-\end{multicols}
+\section*{Technical Skills}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.5cm}X@{}}
+Programming & Python, C++, C\#, TypeScript, MATLAB, SQL \\
+Frameworks \& Tools & React, .NET, Git, Linux, Simulink, Simscape, Rexygen \\
+Domains & Robotics, Control Engineering, Embedded Systems, Mathematical Modeling, Scientific Computing \\
+\end{tabularx}
+
+\section*{Languages}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.5cm}X@{}}
+Czech & Native \\
+English & C1 \\
+\end{tabularx}
+
+\section*{Interests}
+Space technology, motorsport, running, hiking
 
 \end{document}
