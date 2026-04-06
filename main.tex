@@ -1,167 +1,117 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[10pt,a4paper]{article}
 
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
+\usepackage[a4paper,margin=1.35cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\input{glyphtounicode}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{parskip}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{titlesec}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+\definecolor{accent}{HTML}{0F4C81}
+\definecolor{subtle}{HTML}{555555}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.15em,topsep=0.15em}
+\setlength{\columnsep}{0.9cm}
 
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\vspace{0.2em}\titlerule]
+\titlespacing*{\section}{0pt}{0.6em}{0.35em}
 
-\urlstyle{same}
-
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-\pdfgentounicode=1
-
-\newcommand{\resumeItem}[1]{
-  \item\small{#1 \vspace{-2pt}}
+\newcommand{\entry}[4]{%
+\textbf{#1} \hfill {\small #2}\\
+{\small\textit{#3}} \hfill {\small\color{subtle} #4}\\[-0.25em]
 }
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \begin{document}
 
-\begin{center}
-    {\Huge \scshape Jon\'a\v{s} Proch\'azka} \\ \vspace{1pt}
-    Pilsen, Czech Republic \\ \vspace{1pt}
-    \small \href{mailto:jonasprochaz@gmail.com}{\underline{jonasprochaz@gmail.com}} $|$ 
-    +420 777 079 627 $|$
-    \href{https://github.com/jonasproch}{\underline{github.com/jonasproch}}
-\end{center}
+{\huge\bfseries\color{accent} Jon\'a\v{s} Proch\'azka}\\[0.3em]
+{\small Pilsen, Czech Republic \textbar\ \href{mailto:jonasprochaz@gmail.com}{jonasprochaz@gmail.com} \textbar\ +420 777 079 627 \textbar\ \href{https://github.com/jonasproch}{github.com/jonasproch}}
 
-\section{Profile}
-\small
+\vspace{0.5em}
+
+\begin{multicols}{2}
+
+\section*{Profile}
 Third year Cybernetics student at the University of West Bohemia with a focus on automation, robotics, control, and software systems. Currently working on a bachelor's thesis on uncertainty propagation of objects in orbit and employed part time as a software developer. Interested in scientific computing, robotics, applied mathematics, and technically demanding software engineering roles in research oriented environments.
 
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {University of West Bohemia, Faculty of Applied Sciences}{Pilsen, Czech Republic}
-      {BSc in Cybernetics and Robotics}{Sep 2023 -- Present}
-      \resumeItemListStart
-        \resumeItem{Relevant areas: automation, control engineering, robotics, embedded systems, programming, and applied mathematics.}
-        \resumeItem{Bachelor's thesis: \textit{Representation of uncertainty in the position and velocity of an object in orbit}.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+\section*{Education}
+\entry{BSc in Cybernetics and Robotics}{Sep 2023 -- Present}{University of West Bohemia, Faculty of Applied Sciences}{Pilsen, Czech Republic}
+\begin{itemize}
+  \item Relevant areas: automation, control engineering, robotics, embedded systems, programming, and applied mathematics.
+  \item Bachelor's thesis: \textit{Representation of uncertainty in the position and velocity of an object in orbit}.
+\end{itemize}
 
-\section{Experience}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Apollo Data s.r.o.}{Pilsen, Czech Republic}
-      {Software Developer}{May 2025 -- Present}
-      \resumeItemListStart
-        \resumeItem{Build client applications using \textbf{.NET, MS SQL, TypeScript, and React} across backend, database, and frontend layers.}
-        \resumeItem{Deliver features end to end, including business logic, database integration, and user interface implementation.}
-        \resumeItem{Contribute to production software with emphasis on reliability, maintainability, and practical usability.}
-        \resumeItem{Work within a professional software development workflow using Git and iterative delivery.}
-      \resumeItemListEnd
+\section*{Technical Skills}
+\textbf{Programming}\\
+Python, C++, C\#, TypeScript, MATLAB, SQL
 
-    \resumeSubheading
-      {SentiSquare s.r.o.}{Pilsen, Czech Republic}
-      {Web Developer}{Feb 2023 -- Jan 2025}
-      \resumeItemListStart
-        \resumeItem{Developed web application frontend features using \textbf{React and TypeScript}.}
-        \resumeItem{Built and maintained reusable user interface components in a team development environment.}
-        \resumeItem{Contributed to modern frontend development practices and maintainable codebases.}
-      \resumeItemListEnd
+\vspace{0.35em}
+\textbf{Frameworks \& Tools}\\
+React, .NET, Git, Linux, Simulink, Simscape, Rexygen
 
-    \resumeSubheading
-      {TerritorioVirtual}{M\'alaga, Spain}
-      {Web Development Intern}{Jul 2022 -- Jul 2022}
-      \resumeItemListStart
-        \resumeItem{Completed an \textbf{Erasmus internship} focused on web development.}
-        \resumeItem{Contributed to a sports club management platform in an international work environment.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+\vspace{0.35em}
+\textbf{Domains}\\
+Robotics, Control Engineering, Embedded Systems, Mathematical Modeling, Scientific Computing
 
-\section{Projects}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Bachelor's Thesis: Uncertainty Propagation of Objects in Orbit} $|$ \emph{Research project}}{Sep 2025 -- Present}
-          \resumeItemListStart
-            \resumeItem{Compare approaches for propagating uncertainty in orbital position and velocity across different coordinate systems.}
-            \resumeItem{Apply mathematical modeling and numerical analysis to orbital dynamics.}
-            \resumeItem{Investigate representation and interpretation of uncertainty in dynamical systems.}
-          \resumeItemListEnd
+\section*{Languages}
+\textbf{Czech} Native\\
+\textbf{English} C1
 
-      \resumeProjectHeading
-          {\textbf{St\"aubli TX40 Robot Kinematics and Control Project} $|$ \emph{MATLAB, Simulink, Simscape, Rexygen}}{Oct 2025 -- Jan 2026}
-          \resumeItemListStart
-            \resumeItem{Developed forward and inverse kinematics, Jacobian calculations, and trajectory planning for a 6 axis industrial robot.}
-            \resumeItem{Built and validated simulation models in MATLAB, Simulink, and Simscape.}
-            \resumeItem{Integrated Rexygen based control and visualization components for motion analysis and robot behavior verification.}
-          \resumeItemListEnd
+\section*{Interests}
+Space technology, motorsport, running, hiking
 
-      \resumeProjectHeading
-          {\textbf{Autonomous Line Following and Maze Solving Robot} $|$ \emph{Embedded robotics project}}{Mar 2025 -- Jul 2025}
-          \resumeItemListStart
-            \resumeItem{Programmed an autonomous wheeled robot for line following, maze solving, and shortest path execution.}
-            \resumeItem{Implemented navigation logic and control behavior for repeated runs and path optimization.}
-            \resumeItem{Applied embedded and robotics principles in a practical hardware software system.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
+\columnbreak
 
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Programming}{: Python, C++, C\#, TypeScript, MATLAB, SQL} \\
-     \textbf{Frameworks \& Tools}{: React, .NET, Git, Linux, Simulink, Simscape, Rexygen} \\
-     \textbf{Domains}{: Robotics, Control Engineering, Embedded Systems, Mathematical Modeling, Scientific Computing}
-    }}
- \end{itemize}
+\section*{Experience}
+\entry{Software Developer}{May 2025 -- Present}{Apollo Data s.r.o.}{Pilsen, Czech Republic}
+\begin{itemize}
+  \item Build client applications using \textbf{.NET, MS SQL, TypeScript, and React} across backend, database, and frontend layers.
+  \item Deliver features end to end, including business logic, database integration, and user interface implementation.
+  \item Contribute to production software with emphasis on reliability, maintainability, and practical usability.
+  \item Work within a professional software development workflow using Git and iterative delivery.
+\end{itemize}
 
-\section{Languages}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Czech}{: Native} \\
-     \textbf{English}{: C1}
-    }}
- \end{itemize}
+\entry{Web Developer}{Feb 2023 -- Jan 2025}{SentiSquare s.r.o.}{Pilsen, Czech Republic}
+\begin{itemize}
+  \item Developed web application frontend features using \textbf{React and TypeScript}.
+  \item Built and maintained reusable user interface components in a team development environment.
+  \item Contributed to modern frontend development practices and maintainable codebases.
+\end{itemize}
 
-\section{Interests}
-\small Space technology, motorsport, running, hiking
+\entry{Web Development Intern}{Jul 2022 -- Jul 2022}{TerritorioVirtual}{M\'alaga, Spain}
+\begin{itemize}
+  \item Completed an \textbf{Erasmus internship} focused on web development.
+  \item Contributed to a sports club management platform in an international work environment.
+\end{itemize}
+
+\section*{Projects}
+\entry{Bachelor's Thesis: Uncertainty Propagation of Objects in Orbit}{Sep 2025 -- Present}{Research project}{University of West Bohemia}
+\begin{itemize}
+  \item Compare approaches for propagating uncertainty in orbital position and velocity across different coordinate systems.
+  \item Apply mathematical modeling and numerical analysis to orbital dynamics.
+  \item Investigate representation and interpretation of uncertainty in dynamical systems.
+\end{itemize}
+
+\entry{St\"aubli TX40 Robot Kinematics and Control Project}{Oct 2025 -- Jan 2026}{MATLAB, Simulink, Simscape, Rexygen}{University coursework}
+\begin{itemize}
+  \item Developed forward and inverse kinematics, Jacobian calculations, and trajectory planning for a 6 axis industrial robot.
+  \item Built and validated simulation models in MATLAB, Simulink, and Simscape.
+  \item Integrated Rexygen based control and visualization components for motion analysis and robot behavior verification.
+\end{itemize}
+
+\entry{Autonomous Line Following and Maze Solving Robot}{Mar 2025 -- Jul 2025}{Embedded robotics project}{University coursework}
+\begin{itemize}
+  \item Programmed an autonomous wheeled robot for line following, maze solving, and shortest path execution.
+  \item Implemented navigation logic and control behavior for repeated runs and path optimization.
+  \item Applied embedded and robotics principles in a practical hardware software system.
+\end{itemize}
+
+\end{multicols}
 
 \end{document}
