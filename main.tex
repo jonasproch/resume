@@ -1,42 +1,55 @@
 \documentclass[11pt,a4paper]{article}
 
-\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage[a4paper,margin=1.6cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
 \usepackage{parskip}
+\usepackage{ragged2e}
 
-\setlength{\parindent}{0pt}
 \pagenumbering{gobble}
-\setlist[itemize]{leftmargin=1.2em, itemsep=0.2em, topsep=0.2em}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.3em, itemsep=0.25em, topsep=0.25em}
+\definecolor{accent}{HTML}{1F4E79}
+\definecolor{textgray}{HTML}{444444}
 
-\titleformat{\section}{\large\bfseries}{}{0pt}{}
-\titlespacing*{\section}{0pt}{0.8em}{0.4em}
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}
+  {0pt}
+  {}
+  [\vspace{0.2em}\titlerule]
+\titlespacing*{\section}{0pt}{1.0em}{0.6em}
+
+\newcommand{\cvheader}[1]{{\Huge\bfseries\color{accent} #1}}
+\newcommand{\cvsubheader}[1]{{\small\color{textgray} #1}}
+\newcommand{\cvitem}[4]{%
+  \textbf{#1} \hfill {\small #2}\\
+  \textit{#3} \hfill {\small #4}\\[-0.35em]
+}
 
 \begin{document}
 
-{\LARGE \textbf{Jon\'a\v{s} Proch\'azka}}\\
-Pilsen, Czech Republic \\
-\href{mailto:jonasprochaz@gmail.com}{jonasprochaz@gmail.com} \;|\; +420\,777\,079\,627 \;|\; \href{https://github.com/jonasproch}{github.com/jonasproch}
+\cvheader{Jon\'a\v{s} Proch\'azka}\\[0.25em]
+\cvsubheader{Pilsen, Czech Republic \textbar\ \href{mailto:jonasprochaz@gmail.com}{jonasprochaz@gmail.com} \textbar\ +420\,777\,079\,627 \textbar\ \href{https://github.com/jonasproch}{github.com/jonasproch}}
 
 \section*{Profile}
+\justifying
 Third year Cybernetics student at the University of West Bohemia with a focus on automation, robotics, control, and software systems. Currently working on a bachelor's thesis on uncertainty propagation of objects in orbit and employed part time as a software developer. Interested in scientific computing, robotics, applied mathematics, and technically demanding software engineering roles in research oriented environments.
 
 \section*{Education}
-\textbf{BSc in Cybernetics and Robotics} \hfill Sep 2023 -- Present\\
-University of West Bohemia, Faculty of Applied Sciences, Pilsen, Czech Republic
-
-Relevant areas: automation, control engineering, robotics, embedded systems, programming, and applied mathematics.
-
+\cvitem{BSc in Cybernetics and Robotics}{Sep 2023 -- Present}{University of West Bohemia, Faculty of Applied Sciences}{Pilsen, Czech Republic}
+Relevant areas: automation, control engineering, robotics, embedded systems, programming, and applied mathematics.\\
 \textbf{Bachelor's thesis:} Representation of uncertainty in the position and velocity of an object in orbit.
 
 \section*{Experience}
-\textbf{Software Developer, Apollo Data s.r.o.} \hfill May 2025 -- Present\\
-Pilsen, Czech Republic
+\cvitem{Software Developer}{May 2025 -- Present}{Apollo Data s.r.o.}{Pilsen, Czech Republic}
 \begin{itemize}
   \item Build client applications using \textbf{.NET, MS SQL, TypeScript, and React} across backend, database, and frontend layers.
   \item Deliver features end to end, including business logic, database integration, and user interface implementation.
@@ -44,37 +57,35 @@ Pilsen, Czech Republic
   \item Work within a professional software development workflow using Git and iterative delivery.
 \end{itemize}
 
-\textbf{Web Developer, SentiSquare s.r.o.} \hfill Feb 2023 -- Jan 2025\\
-Pilsen, Czech Republic
+\cvitem{Web Developer}{Feb 2023 -- Jan 2025}{SentiSquare s.r.o.}{Pilsen, Czech Republic}
 \begin{itemize}
   \item Developed web application frontend features using \textbf{React and TypeScript}.
   \item Built and maintained reusable user interface components in a team development environment.
   \item Contributed to modern frontend development practices and maintainable codebases.
 \end{itemize}
 
-\textbf{Web Development Intern, TerritorioVirtual} \hfill Jul 2022 -- Jul 2022\\
-M\'alaga, Spain
+\cvitem{Web Development Intern}{Jul 2022 -- Jul 2022}{TerritorioVirtual}{M\'alaga, Spain}
 \begin{itemize}
   \item Completed an \textbf{Erasmus internship} focused on web development.
   \item Contributed to a sports club management platform in an international work environment.
 \end{itemize}
 
 \section*{Selected Projects}
-\textbf{Bachelor's Thesis: Uncertainty Propagation of Objects in Orbit} \hfill Sep 2025 -- Present
+\cvitem{Bachelor's Thesis: Uncertainty Propagation of Objects in Orbit}{Sep 2025 -- Present}{Research project}{University of West Bohemia}
 \begin{itemize}
   \item Compare approaches for propagating uncertainty in orbital position and velocity across different coordinate systems.
   \item Apply mathematical modeling and numerical analysis to orbital dynamics.
   \item Investigate representation and interpretation of uncertainty in dynamical systems.
 \end{itemize}
 
-\textbf{St\"aubli TX40 Robot Kinematics and Control Project} \hfill Oct 2025 -- Jan 2026
+\cvitem{St\"aubli TX40 Robot Kinematics and Control Project}{Oct 2025 -- Jan 2026}{Robotics project}{University coursework}
 \begin{itemize}
   \item Developed forward and inverse kinematics, Jacobian calculations, and trajectory planning for a 6 axis industrial robot.
   \item Built and validated simulation models in MATLAB, Simulink, and Simscape.
   \item Integrated Rexygen based control and visualization components for motion analysis and robot behavior verification.
 \end{itemize}
 
-\textbf{Autonomous Line Following and Maze Solving Robot} \hfill Mar 2025 -- Jul 2025
+\cvitem{Autonomous Line Following and Maze Solving Robot}{Mar 2025 -- Jul 2025}{Embedded robotics project}{University coursework}
 \begin{itemize}
   \item Programmed an autonomous wheeled robot for line following, maze solving, and shortest path execution.
   \item Implemented navigation logic and control behavior for repeated runs and path optimization.
@@ -82,13 +93,17 @@ M\'alaga, Spain
 \end{itemize}
 
 \section*{Technical Skills}
-\textbf{Programming:} Python, C++, C\#, TypeScript, MATLAB, SQL\\
-\textbf{Frameworks and tools:} React, .NET, Git, Linux, Simulink, Simscape, Rexygen\\
-\textbf{Domains:} Robotics, Control Engineering, Embedded Systems, Mathematical Modeling, Scientific Computing
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.3cm}X@{}}
+Programming & Python, C++, C\#, TypeScript, MATLAB, SQL \\
+Frameworks \& Tools & React, .NET, Git, Linux, Simulink, Simscape, Rexygen \\
+Domains & Robotics, Control Engineering, Embedded Systems, Mathematical Modeling, Scientific Computing \\
+\end{tabularx}
 
 \section*{Languages}
-\textbf{Czech:} Native\\
-\textbf{English:} C1
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.3cm}X@{}}
+Czech & Native \\
+English & C1 \\
+\end{tabularx}
 
 \section*{Interests}
 Space technology, motorsport, running, hiking
